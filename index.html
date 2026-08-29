@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ポータルサイト トップページ</title>
     <style>
-       /* 全体共通の基本設定 */
+        /* 全体共通の基本設定 */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -25,66 +25,63 @@
             background: linear-gradient(135deg, #7b4397 0%, #dc2430 50%, #f18973 100%);
             padding: 15px 20px;
             display: flex;
-            justify-content: center; /* 横長イラストを中央に配置（左寄せにする場合は flex-start に変更） */
+            justify-content: center; 
             align-items: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
         /* ヘッダーの横長イラスト画像 */
         .header-banner {
             width: 100%;
-            max-width: 280px;   /* 横長イラストの最大横幅（お好みに合わせて調整してください） */
-            height: auto;       /* 縦横比を維持 */
-            max-height: 50px;   /* 縦が大きくなりすぎないように制限 */
+            max-width: 280px;   
+            height: auto;       
+            max-height: 50px;   
             object-fit: contain;
         }
 
-        /* メインコンテンツ（縦並びのコンパクトなリンク） */
+        /* メインコンテンツ */
         main {
             flex: 1;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 25px 20px;
-            width: 100%;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center; /* リンクのコンテナを画面の中央に寄せる */
         }
 
-        /* 常に縦に並べる設定 */
+        /* リンクを囲むコンテナ：ここで横幅をコンパクトに制限 */
         .link-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;         /* ボタン同士の上下の間隔 */
+            width: 100%;
+            max-width: 280px;  /* ★白い枠の最大横幅を小さく指定（ここでお好みの長さに調整できます） */
         }
-
-        /* 小さめ・横長のリンクボタン */
+        /* 小さめ・短めのリンクボタン */
         .portal-link {
             display: flex;
             flex-direction: row;
             align-items: center;
             background-color: #ffffff;
-            border-radius: 8px;
-            padding: 12px 16px;
+            border-radius: 10px;
+            padding: 10px 14px;  /* 上下左右の余白を少し詰めてコンパクトに */
             text-decoration: none;
             border: 1px solid #e1e8ed;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
             transition: background-color 0.2s, transform 0.1s;
         }
-
         /* タップ時の動き */
         .portal-link:active {
             background-color: #f0f3f6;
-            transform: scale(0.98);
+            transform: scale(0.97);
         }
-
         /* ボタン内の小さいイラスト */
         .portal-link img {
-            width: 40px;
-            height: 40px;
+            width: 36px;       /* イラストも枠に合わせて少しだけ小ぶりに */
+            height: 36px;
             object-fit: contain;
-            margin-right: 15px;
+            margin-right: 12px;
         }
-
         /* 画面名テキスト */
         .portal-link span {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #333333;
         }
@@ -101,8 +98,7 @@
 <body>
     <header>
         <!-- ヘッダ -->
-        <img src="./logo.png" alt="支部ポータル" class="header-logo">
-        <img src="./logo.png" alt="支部ポータルロゴ" class="header-banner">
+        <img src="./images/logo.png" alt="支部ポータルロゴ" class="header-banner">
     </header>
 
     <main>
