@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポータルサイト トップページ</title>
+    <style>
+        /* 1. 全体共通の基本設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 2. ヘッダー */
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        header h1 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        /* 3. メインコンテンツ（リンクの並び） */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            width: 100%;
+        }
+
+        /* フレックスボックスを使ってリンクを並べる（標準は縦並び：スマホ用） */
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* リンク同士の間隔 */
+        }
+
+        /* 4. リンクボタンのスタイル */
+        .portal-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* タップ・ホバー時の動き */
+        .portal-link:active,
+        .portal-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* イラスト（画像）のスタイル */
+        .portal-link img {
+            width: 120px;       /* イラストの横幅 */
+            height: 120px;      /* イラストの縦幅 */
+            object-fit: contain;
+            margin-bottom: 15px; /* テキストとの間隔 */
+        }
+
+        /* 画面名テキストのスタイル */
+        .portal-link span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* 5. フッター */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            background-color: #ffffff;
+        }
+
+        /* 6. パソコン・タブレット向けのレスポンシブ対応（画面幅600px以上） */
+        @media (min-width: 600px) {
+            .link-container {
+                flex-direction: row; /* 横並びに変更 */
+                justify-content: space-between;
+            }
+            .portal-link {
+                flex: 1; /* 3つのボタンを均等な幅にする */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>マイ・ポータルサイト</h1>
+    </header>
+
+    <main>
+        <div class="link-container">
+            
+            <!-- リンク1 -->
+            <a href="page1.html" class="portal-link">
+                <!-- 仮の画像URLを入れています。ご自身のイラスト画像名に書き換えてください -->
+                <img src="https://placehold.co" alt="画面1のイラスト">
+                <span>画面1の名前</span>
+            </a>
+
+            <!-- リンク2 -->
+            <a href="page2.html" class="portal-link">
+                <img src="https://placehold.co" alt="画面2のイラスト">
+                <span>画面2の名前</span>
+            </a>
+
+            <!-- リンク3 -->
+            <a href="page3.html" class="portal-link">
+                <img src="https://placehold.co" alt="画面3のイラスト">
+                <span>画面3の名前</span>
+            </a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ShibuPortal</p>
+    </footer>
+
+</body>
+</html>
