@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ポータルサイト トップページ</title>
     <style>
-        /* 全体共通の基本設定 */
+       /* 全体共通の基本設定 */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,38 +20,28 @@
             min-height: 100vh;
         }
 
-        /* ヘッダー：朝焼け（グラデーション）と左イラストの配置 */
+        /* ヘッダー：朝焼け（グラデーション） */
         header {
-            /* 朝焼けをイメージしたグラデーション（紫〜ピンク〜オレンジのグラデーション） */
             background: linear-gradient(135deg, #7b4397 0%, #dc2430 50%, #f18973 100%);
             padding: 15px 20px;
             display: flex;
-            align-items: center; /* 上下中央揃え */
-            gap: 12px;           /* イラストと文字の間隔 */
+            justify-content: center; /* 横長イラストを中央に配置（左寄せにする場合は flex-start に変更） */
+            align-items: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
-        
-        /* ヘッダー左側の小さいイラスト */
-        .header-logo {
-            width: 35px;        /* 小さめのサイズ */
-            height: 35px;
-            border-radius: 50%; /* 必要に応じて丸型に（四角のままなら削除してください） */
-            object-fit: cover;
-            background-color: rgba(255, 255, 255, 0.2); /* 画像がない場合の仮背景 */
-        }
-
-        /* ヘッダーのタイトル文字 */
-        header h1 {
-            font-size: 1.2rem;
-            color: #ffffff;      /* 背景がグラデーションなので文字は白 */
-            font-weight: bold;
-            letter-spacing: 0.5px;
+        /* ヘッダーの横長イラスト画像 */
+        .header-banner {
+            width: 100%;
+            max-width: 280px;   /* 横長イラストの最大横幅（お好みに合わせて調整してください） */
+            height: auto;       /* 縦横比を維持 */
+            max-height: 50px;   /* 縦が大きくなりすぎないように制限 */
+            object-fit: contain;
         }
 
         /* メインコンテンツ（縦並びのコンパクトなリンク） */
         main {
             flex: 1;
-            max-width: 500px; /* スマホで見やすいように幅をきゅっと狭めています */
+            max-width: 500px;
             margin: 0 auto;
             padding: 25px 20px;
             width: 100%;
@@ -61,24 +51,24 @@
         .link-container {
             display: flex;
             flex-direction: column;
-            gap: 12px; /* ボタン同士の間隔を少し狭めてコンパクトに */
+            gap: 12px;
         }
 
         /* 小さめ・横長のリンクボタン */
         .portal-link {
             display: flex;
-            flex-direction: row; /* 横並び（左にイラスト、右にテキスト） */
+            flex-direction: row;
             align-items: center;
             background-color: #ffffff;
-            border-radius: 8px;  /* 角丸を少しシャープに */
-            padding: 12px 16px;  /* 上下を狭くして小さめに */
+            border-radius: 8px;
+            padding: 12px 16px;
             text-decoration: none;
-            border: 1px solid #e1e8ed; /* 薄い境界線で引き締め */
+            border: 1px solid #e1e8ed;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
             transition: background-color 0.2s, transform 0.1s;
         }
 
-        /* タップ・ホバー時の動き（スマホで押しやすいシンプルな反応） */
+        /* タップ時の動き */
         .portal-link:active {
             background-color: #f0f3f6;
             transform: scale(0.98);
@@ -86,13 +76,13 @@
 
         /* ボタン内の小さいイラスト */
         .portal-link img {
-            width: 40px;        /* イラストを小さく調整 */
+            width: 40px;
             height: 40px;
             object-fit: contain;
-            margin-right: 15px; /* 右側のテキストとの間隔 */
+            margin-right: 15px;
         }
 
-        /* 画面名テキストのスタイル */
+        /* 画面名テキスト */
         .portal-link span {
             font-size: 1rem;
             font-weight: 600;
@@ -109,28 +99,27 @@
     </style>
 </head>
 <body>
-
     <header>
         <!-- ヘッダ -->
-        <img src="https://placehold.co" alt="ロゴ" class="header-logo">
-        <h1>支部ポータル</h1>
+        <img src="./logo.png" alt="支部ポータル" class="header-logo">
+        <img src="./logo.png" alt="支部ポータルロゴ" class="header-banner">
     </header>
 
     <main>
         <div class="link-container">
             <!-- ＳＧ掲示板 -->
             <a href="page1.html" class="portal-link">
-                <img src="https://placehold.co" alt="ＳＧ掲示板">
+                <img src="./images/seigan.png" alt="ＳＧ掲示板">
                 <span>ＳＧ掲示板</span>
             </a>
             <!-- ＳＰ成果表 -->
             <a href="page2.html" class="portal-link">
-                <img src="https://placehold.co" alt="ＳＰ成果表">
+                <img src="./images/sp.gif" alt="ＳＰ成果表">
                 <span>ＳＰ成果表</span>
             </a>
             <!-- 中福岡新聞 -->
             <a href="page3.html" class="portal-link">
-                <img src="https://placehold.co" alt="中福岡新聞">
+                <img src="./images/digital.png" alt="中福岡新聞">
                 <span>中福岡新聞</span>
             </a>
         </div>
