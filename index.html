@@ -23,19 +23,19 @@
         /* ヘッダー：朝焼け（グラデーション） */
         header {
             background: linear-gradient(135deg, #7b4397 0%, #dc2430 50%, #f18973 100%);
-            padding: 15px 20px;
+            padding: 25px 20px;       /* 縦幅を少し広げて、大きなイラストが収まるように調整 */
             display: flex;
             justify-content: center; 
             align-items: center;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
-        /* ヘッダーの横長イラスト画像 */
+        
+        /* ヘッダーのイラスト */
         .header-banner {
             width: 100%;
-            max-width: 280px;   
-            height: auto;       
-            max-height: 50px;   
-            object-fit: contain;
+            max-width: 280px;   /* リンクの白い枠と同じ横幅 */
+            height: 58px;       /* リンクの白い枠とほぼ同じ縦幅 */
+            object-fit: contain; /* 縦横比を保ったまま枠内に収める */
         }
 
         /* メインコンテンツ */
@@ -43,17 +43,18 @@
             flex: 1;
             padding: 30px 20px;
             display: flex;
-            justify-content: center; /* リンクのコンテナを画面の中央に寄せる */
+            justify-content: center;
         }
 
-        /* リンクを囲むコンテナ：ここで横幅をコンパクトに制限 */
+        /* リンクを囲むコンテナ */
         .link-container {
             display: flex;
             flex-direction: column;
-            gap: 14px;         /* ボタン同士の上下の間隔 */
+            gap: 14px;
             width: 100%;
-            max-width: 280px;  /* ★白い枠の最大横幅を小さく指定（ここでお好みの長さに調整できます） */
+            max-width: 280px;  /* ヘッダーのイラストと同じ横幅 */
         }
+
         /* 小さめ・短めのリンクボタン */
         .portal-link {
             display: flex;
@@ -61,24 +62,27 @@
             align-items: center;
             background-color: #ffffff;
             border-radius: 10px;
-            padding: 10px 14px;  /* 上下左右の余白を少し詰めてコンパクトに */
+            padding: 10px 14px;  /* 縦幅が約58pxになります */
             text-decoration: none;
             border: 1px solid #e1e8ed;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
             transition: background-color 0.2s, transform 0.1s;
         }
+
         /* タップ時の動き */
         .portal-link:active {
             background-color: #f0f3f6;
             transform: scale(0.97);
         }
+
         /* ボタン内の小さいイラスト */
         .portal-link img {
-            width: 36px;       /* イラストも枠に合わせて少しだけ小ぶりに */
+            width: 36px;
             height: 36px;
             object-fit: contain;
             margin-right: 12px;
         }
+
         /* 画面名テキスト */
         .portal-link span {
             font-size: 0.95rem;
